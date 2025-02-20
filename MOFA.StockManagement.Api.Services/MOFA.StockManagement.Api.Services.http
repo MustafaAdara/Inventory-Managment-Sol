@@ -1,0 +1,6 @@
+@MOFA.StockManagement.Api.Services_HostAddress = http://localhost:5079
+
+GET {{MOFA.StockManagement.Api.Services_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

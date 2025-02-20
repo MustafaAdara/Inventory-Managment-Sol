@@ -1,0 +1,97 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = IndexResource.Title;
+}
+
+
+<div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+        <h2>@IndexResource.Header</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <breadcrumb items="@Model.BreadcrumbItems"></breadcrumb>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card border">
+                <div class="card-body">
+                    <div class="row mt-1 mb-1">
+                        <div class="col text-end">
+                            <a id="searchBtn" onclick="$('#searchModal').modal('show')" style="" title="@GlobalSharedResource.Search" class="btn text-black-50 border">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            @if (string.IsNullOrEmpty(Model.SearchBy))
+                            {
+                                <a onclick="getModalAction(event,'@Url.Page("/ItemTypes/_Create",new {area="Config"})')" data-target="#createItemTypeModal" title="@GlobalSharedResource.New" class="btn text-primary border">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-page="Index" asp-area="Config" title="Back" class="btn text-secondary border">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                    <div id="searchModal" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">B.Search</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="@GlobalSharedResource.Close" title="@GlobalSharedResource.Close">
+                                    </button>
+                                </div>
+                                <form id="filter" data-target="#listItemTypes">
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <input asp-for="SearchBy" class="form-control" placeholder="@GlobalSharedResource.SearchBy" />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@GlobalSharedResource.Back</button>
+                                        <button type="submit" class="btn btn-primary">@GlobalSharedResource.Search</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="listItemTypes" data-target="@Url.Page("/ItemTypes/_List", new { area = "Config" })">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div id="createItemTypeModal" class="modal" tabindex="-1" role="dialog">
+    </div>
+</section>
+
+<section>
+    <div id="detailsItemTypeModal" class="modal" tabindex="-1" role="dialog">
+    </div>
+</section>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+
+        $(document).ready(function ($) {
+            initList('#listItemTypes');
+        });
+
+    </script>
+}

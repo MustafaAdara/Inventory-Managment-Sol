@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.12" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.12" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\MOFA.StockManagement.Domain.Patterns.Services\MOFA.StockManagement.Domain.Patterns.Services.csproj" />
+	  <ProjectReference Include="..\MOFA.StockManagement.Infrastructure.Business.Extension\MOFA.StockManagement.Infrastructure.Business.Extension.csproj" />
+	  <ProjectReference Include="..\MOFA.StockManagement.Infrastructure.Business.Mapper\MOFA.StockManagement.Infrastructure.Business.Mapper.csproj" />
+	  <ProjectReference Include="..\MOFA.StockManagement.Infrastructure.Data.Contexts\MOFA.StockManagement.Infrastructure.Data.Contexts.csproj" />
+	  <ProjectReference Include="..\MOFA.StockManagement.Infrastructure.Queries\MOFA.StockManagement.Infrastructure.Queries.csproj" />
+	</ItemGroup>
+	
+</Project>

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="ReportViewerCore.NETCore" Version="15.1.25" />
+	</ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\MOFA.StockManagement.ApplicationService.AppService\MOFA.StockManagement.ApplicationService.AppService.csproj" />
+    <ProjectReference Include="..\MOFA.StockManagement.Presentation.Extension.Resources\MOFA.StockManagement.Presentation.Extension.Resources.csproj" />
+  </ItemGroup>
+
+
+
+</Project>

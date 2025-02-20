@@ -1,0 +1,117 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\MyFeature\**" />
+    <Content Remove="Areas\MyFeature\**" />
+    <EmbeddedResource Remove="Areas\MyFeature\**" />
+    <None Remove="Areas\MyFeature\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MOFA.StockManagement.Presentation.Extension\MOFA.StockManagement.Presentation.Extension.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Areas\Config\Pages\ItemTypes\IndexResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IndexResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\Config\Pages\ItemTypes\_CreateResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_CreateResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\Config\Pages\ItemTypes\_DetailsResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_DetailsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\Config\Pages\ItemTypes\_EditResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_EditResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\Config\Pages\Warehouses\IndexResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IndexResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\Config\Pages\Warehouses\_CreateResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_CreateResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\Config\Pages\Warehouses\_DetailsResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_DetailsResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Areas\Config\Pages\Warehouses\_EditResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>_EditResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\ItemTypes\IndexResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>IndexResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\ItemTypes\_CreateResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>_CreateResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\ItemTypes\_DetailsResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>_DetailsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\ItemTypes\_EditResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>_EditResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\Warehouses\IndexResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\Warehouses\IndexResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>IndexResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\Warehouses\_CreateResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\Warehouses\_CreateResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_CreateResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\Warehouses\_DetailsResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\Warehouses\_DetailsResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_DetailsResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\Warehouses\_EditResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas\Config\Pages\Warehouses\_EditResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_EditResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+
+
+</Project>

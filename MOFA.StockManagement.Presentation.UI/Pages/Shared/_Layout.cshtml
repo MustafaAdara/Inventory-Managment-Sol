@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+@{
+    var rqf = Context.Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+    // Culture contains the information of the requested culture
+    var culture = rqf?.RequestCulture.Culture.Name;
+}
+<html lang="@culture" dir="@(culture=="en"?"ltr":"rtl")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewLocalizer["Title"] - @ViewData["Title"]</title>
+    <link href="@($"/css/light.css")" rel="stylesheet" />
+    @if (culture == "ar")
+    {
+        <style>
+            Body {
+                direction: rtl
+            }
+
+            .content {
+                direction: rtl
+            }
+
+            .text-end {
+                text-align: left !important;
+            }
+
+            body:not([data-sidebar-position=right]) .navbar-align {
+                margin-right: auto;
+                margin-left: 0;
+            }
+
+            .navbar-nav, .navbar input {
+                direction: rtl;
+            }
+
+            .dropdown-menu-end[data-bs-popper] {
+                right: auto;
+                left: 0;
+            }
+
+            .fa-chevron-left:before {
+                content: "\f054";
+            }
+
+            .fa-chevron-right:before {
+                content: "\f053";
+            }
+
+            .breadcrumb-item+ .breadcrumb-item {
+                padding-right: .5rem;
+                padding-left: 0;
+            }
+            .breadcrumb-item+ .breadcrumb-item:before {
+                float: right;
+                padding-left: .5rem;
+                padding-right:0;
+            }
+            .pagination
+            {
+                padding-right:0;
+            }
+
+            dd {
+                margin-right: 0;
+            }
+
+            .page-item:first-child .page-link {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+                border-bottom-right-radius: .2rem;
+                border-top-right-radius: .2rem;
+            }
+
+            .page-item:last-child .page-link {
+                border-bottom-left-radius: .2rem;
+                border-top-left-radius: .2rem;
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }
+        </style>
+    }
+
+    @await RenderSectionAsync("Styles", required: false)
+
+    <style>
+        .logo {
+            font-size: 32px;
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+            font-weight: 600;
+            /*letter-spacing: 1px;*/
+            /*text-transform: uppercase;*/
+            /*font-family: "Poppins", sans-serif;*/
+        }
+
+            .logo a {
+                color: #5f80cf;
+            }
+
+            .logo img {
+                max-height: 50px;
+            }
+
+        .table td.td-fit,
+        .table th.th-fit {
+            white-space: nowrap;
+            width: 1%;
+        }
+
+        .spinner-border {
+            animation-duration: 1.5s;
+        }
+    </style>
+</head>
+<body data-theme="light" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
+
+    <div class="wrapper">
+        @* @if (User.Identity.IsAuthenticated)
+        {*@
+        @await Html.PartialAsync("_sidebarPartial")
+        @* } *@
+        <div class="main">
+            @* @if (User.Identity.IsAuthenticated)
+            {*@
+            <!-- ======= Header ======= -->
+            @await Html.PartialAsync("_headerPartial")
+            <!-- ======= Header ======= -->
+            @* } *@
+            <main class="content">
+                <div class="container-fluid p-0">
+                    @RenderBody()
+                </div>
+            </main>
+
+
+            @await Html.PartialAsync("_footerPartial")
+        </div>
+
+        <!-- ======= Footer ======= -->
+    </div>
+    <a href="#" class="back-to-top">
+        <i class="bx bx-up-arrow-alt"></i>
+    </a>
+
+    <div id="preloader"></div>
+
+    <script src="~/js/app.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

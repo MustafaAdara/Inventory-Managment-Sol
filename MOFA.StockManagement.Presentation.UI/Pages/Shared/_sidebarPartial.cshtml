@@ -1,0 +1,93 @@
+﻿<nav id="sidebar" class="sidebar">
+	<div class="sidebar-content js-simplebar">
+		<div class="sidebar-brand" style="padding:.25rem 1rem">
+			<div class="logo ms-auto" style="white-space: nowrap;">
+				<a asp-area="" asp-page="/Index" class="text-decoration-none">
+					<div class="d-flex" style="font-size:small">
+						<img src="~/img/Logo.png" alt="" class="d-block m-1" />
+						<div class="m-auto ms-1">
+							<h3 class="m-0 text-start" style="font-weight:600">@Resources.Pages.Shared._Layout.SidebarTitle</h3>
+							<p class="m-0 text-start" style="font-weight:600"></p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<hr style="margin:0px" />
+		<ul class="sidebar-nav">
+			@*<li class="sidebar-header">
+			Menu
+			</li>*@
+			<li class="sidebar-item">
+				<a asp-area="" asp-page="/Index" class="sidebar-link">
+					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+				</a>
+			</li>
+			<li class="sidebar-item">
+				<a asp-area="Config" asp-page="/Warehouses/Index" class="sidebar-link">
+					<i class="fas fa-solid fa-warehouse align-middle"></i>
+					<span class="align-middle">Warehouses</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
+				<a asp-area="Config" asp-page="/ItemTypes/Index" class="sidebar-link">
+					<i class="fas fa-solid fa-cubes align-middle"></i>
+					<span class="align-middle">Item Types</span>
+				</a>
+			</li>
+
+
+			@* <li class="sidebar-item">
+				<a data-bs-target="#report" data-bs-toggle="collapse" class="sidebar-link collapsed">
+					<i class="align-middle" data-feather="calendar"></i> <span class="align-middle">Reports</span>
+				</a>
+				<ul id="report" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+					<li class="sidebar-item"><a class="sidebar-link" asp-area="ReportsArea" asp-page="/Report/Index"><i class="align-middle" data-feather="list"></i> Report</a></li>
+					<li class="sidebar-item"><a class="sidebar-link" asp-area="ReportsArea" asp-page="/AggReport/Index"><i class="align-middle" data-feather="bar-chart-2"></i> Agg Report</a></li>
+				</ul>
+			</li>
+			<li class="sidebar-item">
+				<a asp-area="ConfigurationArea" asp-page="/Monitor" class="sidebar-link">
+					<i class="align-middle" data-feather="activity"></i> <span class="align-middle">Monitor</span>
+				</a>
+			</li>
+			@if (User.IsInRole("Administration"))
+			{
+				<li class="sidebar-item">
+					<a asp-area="ConfigurationArea" asp-page="/BGService" class="sidebar-link">
+						<i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
+					</a>
+				</li>
+				<li class="sidebar-item">
+					<a data-bs-target="#config" data-bs-toggle="collapse" class="sidebar-link collapsed">
+						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Configuration</span>
+					</a>
+					<ul id="config" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="ConfigurationArea" asp-page="/Issuer/Index"><i class="align-middle" data-feather="award"></i> Issuer</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="ConfigurationArea" asp-page="/Branches/Index"><i class="align-middle" data-feather="grid"></i> Branches</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="ConfigurationArea" asp-page="/POSes/Index"><i class="align-middle" data-feather="hard-drive"></i> POSes</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="ConfigurationArea" asp-page="/Taxes/Index"><i class="align-middle" data-feather="percent"></i> Taxes</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="ConfigurationArea" asp-page="/Customers/Index"><i class="align-middle" data-feather="users"></i> Customers</a></li>
+					</ul>
+				</li>
+				<li class="sidebar-item">
+					<a data-bs-target="#mapping" data-bs-toggle="collapse" class="sidebar-link collapsed">
+						<i class="align-middle" data-feather="repeat"></i> <span class="align-middle">Mapping</span>
+					</a>
+					<ul id="mapping" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/Items/Index"><i class="align-middle" data-feather="tag"></i> Items</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/ReceiptTypes/Index"><i class="align-middle" data-feather="tag"></i> Receipt Types</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/CustomerTypes/Index"><i class="align-middle" data-feather="tag"></i> Customer Types</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/Countries/Index"><i class="align-middle" data-feather="tag"></i> Countries</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/Currencies/Index"><i class="align-middle" data-feather="tag"></i> Currencies</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/Units/Index"><i class="align-middle" data-feather="tag"></i> Units</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/Taxes/Index"><i class="align-middle" data-feather="tag"></i> Taxes</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/DeliveryModes/Index"><i class="align-middle" data-feather="tag"></i> Delivery Modes</a></li>
+						<li class="sidebar-item"><a class="sidebar-link" asp-area="MappingArea" asp-page="/PaymentCodes/Index"><i class="align-middle" data-feather="tag"></i> Payment Codes</a></li>
+					</ul>
+				</li>
+			} *@
+		</ul>
+	</div>
+</nav>

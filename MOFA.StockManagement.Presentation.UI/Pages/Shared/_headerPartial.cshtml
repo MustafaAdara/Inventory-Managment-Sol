@@ -1,0 +1,28 @@
+﻿<nav class="navbar navbar-expand navbar-light navbar-bg">
+    <a class="sidebar-toggle">
+        <i class="hamburger align-self-center"></i>
+    </a>
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav navbar-align">
+            <li class="nav-item">
+                @{
+                    var rqf = Context.Request.HttpContext.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+                    // Culture contains the information of the requested culture
+                    var culture = rqf.RequestCulture.Culture.Name == "ar" ? "en" : "ar";
+                }
+                <a class="nav-link" asp-page="/Lang" asp-route-returnUrl="@Context.Request.Path.Value" asp-route-culture="@culture">
+                    <i class="align-middle me-1" data-feather="globe"></i>@culture
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                    <i class="align-middle me-1" data-feather="user"></i>  Hello @User.Claims.FirstOrDefault(q => q.Type == "NativeName")?.Value!
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" asp-area="IdentityArea" asp-page="/Users/ManagePassword" asp-route-id="@User.Identity.Name"><i class="align-middle me-1" data-feather="edit"></i> Change Password</a>
+                    <a class="dropdown-item" asp-area="IdentityArea" asp-page="/Logout"><i class="align-middle me-1" data-feather="log-out"></i>Log out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

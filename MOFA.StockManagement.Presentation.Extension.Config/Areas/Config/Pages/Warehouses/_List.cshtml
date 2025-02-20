@@ -1,0 +1,57 @@
+﻿@page
+@model _ListModel
+@{
+    Layout = "";
+}
+
+@if (Model.Input!.Data.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="th-fit text-center"></th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Input!.Data[0].Name)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Input!.Data[0].Location)
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Input!.Data)
+                {
+                    <tr>
+                        <td class="td-fit text-center">
+                            <a onclick="getModalAction(event,'@Url.Page($"/Warehouses/_Details",new{area="Config",id= item.Id})')" data-target="#detailsWarehouseModal" title="@GlobalSharedResource.Details" class="btn text-info">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelIssuer => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelIssuer => item.Location)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <pagination current-page="@Model.Input.CurrentPage"
+                page-index-element-id="pageIndex"
+                page-name="/Warehouses/_List"
+                route-values='new { area = "Config", SearchBy = @Model.SearchBy }'
+                total-pages="@Model.Input.TotalPages"
+                show-gap="true"
+                rtl="@Model.Rtl">
+    </pagination>
+}
+else
+{
+    <div class="alert alert-info p-5 text-center" role="alert">
+        @GlobalSharedResource.NoData
+    </div>
+}
