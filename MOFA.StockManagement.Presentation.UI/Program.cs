@@ -121,11 +121,13 @@ builder.Services
 builder.Services
     .AddScoped<IHttpClientHelper<ItemTypeViewModel>, HttpClientServiceHelper<ItemTypeViewModel>>()
     .AddScoped<IHttpClientHelper<WarehouseViewModel>, HttpClientServiceHelper<WarehouseViewModel>>()
+    .AddScoped<IHttpClientHelper<ItemViewModel>, HttpClientServiceHelper<ItemViewModel>>()
 ;
 
 builder.Services
     .AddScoped<IItemTypeAppService, ItemTypeAppService>()
     .AddScoped<IWarehouseAppService, WarehouseAppService>()
+    .AddScoped<IItemAppService, ItemAppService>()
     ;
 
 builder.Services.AddRazorPages();

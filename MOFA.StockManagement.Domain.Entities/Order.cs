@@ -10,11 +10,11 @@
         public Guid? DestinationWarehouseId { get; set; }
         public Guid? ConsumerId { get; set; }
         public Guid? SupplierId { get; set; }
+
         public Supplier? Supplier { get; set; }
         public Warehouse? Warehouse { get; set; }
         public Warehouse? DestinationWarehouse { get; set; }
         public Consumer? Consumer { get; set; }
-
         public ICollection<OrderDetail>? OrderDetails { get; set; }
         public Transaction? Transaction { get; set; }
 

@@ -91,6 +91,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOFA.StockManagement.Presen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOFA.StockManagement.ApplicationService.ReportModels", "MOFA.StockManagement.ApplicationService.ReportModels\MOFA.StockManagement.ApplicationService.ReportModels.csproj", "{98FFA2EB-EDDD-4FCF-8680-47F8C0F76994}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOFA.StockManagement.Presentation.Extension.Sales", "MOFA.StockManagement.Presentation.Extension.Sales\MOFA.StockManagement.Presentation.Extension.Sales.csproj", "{4775576E-3E0F-47AD-863C-04D164B2AD93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -193,6 +195,10 @@ Global
 		{98FFA2EB-EDDD-4FCF-8680-47F8C0F76994}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98FFA2EB-EDDD-4FCF-8680-47F8C0F76994}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98FFA2EB-EDDD-4FCF-8680-47F8C0F76994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4775576E-3E0F-47AD-863C-04D164B2AD93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4775576E-3E0F-47AD-863C-04D164B2AD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4775576E-3E0F-47AD-863C-04D164B2AD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4775576E-3E0F-47AD-863C-04D164B2AD93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -237,5 +243,6 @@ Global
 		{E2E39D45-D946-4F9D-B7FF-7AA179323E7E} = {6EFA30EA-30BB-45B4-8EB3-C88AC3BD8FDE}
 		{CEDC4D67-C6C4-4839-B7AF-21F35B778DAA} = {C3FDA535-68CD-4924-BA12-5FB804D4585C}
 		{98FFA2EB-EDDD-4FCF-8680-47F8C0F76994} = {0F02743D-C40E-4E38-94CB-C5603154E0C0}
+		{4775576E-3E0F-47AD-863C-04D164B2AD93} = {6EFA30EA-30BB-45B4-8EB3-C88AC3BD8FDE}
 	EndGlobalSection
 EndGlobal

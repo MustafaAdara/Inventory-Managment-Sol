@@ -9,10 +9,10 @@
         public byte IsFull { get; set; }
 
 
-        //public ICollection<StockBalanceModel>? StockBalances { get; set; }
-        //public ICollection<OrderModel>? Orders { get; set; }
-        //public ICollection<TransactionModel>? SourceTransactions { get; set; }
-        //public ICollection<TransactionModel>? DestinationTransactions { get; set; }
-        //public ICollection<OrderSerialModel>? OrderSerials { get; set; }
+        public ICollection<StockBalanceModel>? StockBalances { get; set; }
+        public ICollection<OrderModel>? Orders { get; set; }
+        public ICollection<TransactionModel>? SourceTransactions { get; set; }
+        public ICollection<TransactionModel>? DestinationTransactions { get; set; }
+        public ICollection<OrderSerialModel>? OrderSerials { get; set; }
     }
 }

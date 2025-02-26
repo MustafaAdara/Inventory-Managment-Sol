@@ -1,0 +1,66 @@
+﻿@page
+@model _CreateModel
+@{
+    Layout = "";
+}
+
+
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <form method="post" asp-area="Sales" asp-page="/Items/_Create">
+            <div class="modal-header">
+                <h3 class="modal-title">@CreateResource.Header</h3>
+                <div class="col text-end">
+                    <input type="hidden" asp-for="Input!.Id" />
+                    <button type="submit" class="btn text-primary border" title="@GlobalSharedResource.Save">
+                        <i class="fas fa-save"></i>
+                    </button>
+                    <button type="button" class="btn text-secondary border" data-bs-dismiss="modal" aria-label="@GlobalSharedResource.Back" title="@GlobalSharedResource.Back">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <label asp-for="Input!.Name" class="col-form-label col-md-2 col-sm-4"></label>
+                    <div class="col-md-4 col-sm-8 mb-3">
+                        <input asp-for="Input!.Name" class="form-control" />
+                        <span asp-validation-for="Input!.Name" class="text-danger"></span>
+                    </div>
+
+                    <label asp-for="Input!.Description" class="col-form-label col-md-2 col-sm-4"></label>
+                    <div class="col-md-4 col-sm-8 mb-3">
+                        <input asp-for="Input!.Description" class="form-control" />
+                        <span asp-validation-for="Input!.Description" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <label asp-for="Input!.UnitPrice" class="col-form-label col-md-2 col-sm-4"></label>
+                    <div class="col-md-4 col-sm-8 mb-3">
+                        <input asp-for="Input!.UnitPrice" class="form-control" />
+                        <span asp-validation-for="Input!.UnitPrice" class="text-danger"></span>
+                    </div>
+
+                    <label asp-for="Input!.ItemTypeId" class="col-form-label col-md-2 col-sm-4"></label>
+                    <div class="col-md-4 col-sm-8 mb-3">
+                        <select asp-items="Model.itemTypes" asp-for="Input!.ItemTypeId" class="form-select">
+                            <option value="">@GlobalSharedResource.PleaseSelect</option>
+                        </select>
+                        <span asp-validation-for="Input!.ItemTypeId" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

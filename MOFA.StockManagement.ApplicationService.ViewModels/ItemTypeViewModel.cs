@@ -18,6 +18,6 @@ namespace MOFA.StockManagement.ApplicationService.ViewModels
         [Display(ResourceType = typeof(Resources.ItemTypeViewModelResource), Name = "ParentItemTypeID")]
         public Guid? ParentItemTypeID { get; set; }
 
-        //public ICollection<ItemViewModel>? Items { get; set; }
+        public ICollection<ItemViewModel>? Items { get; set; }
     }
 }

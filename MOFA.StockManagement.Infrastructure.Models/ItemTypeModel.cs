@@ -6,6 +6,6 @@
         public string Description { get; set; } = default!;
         public Guid? ParentItemTypeID { get; set; }
 
-        //public ICollection<ItemModel>? Items { get; set; }
+        public ICollection<ItemModel>? Items { get; set; }
     }
 }

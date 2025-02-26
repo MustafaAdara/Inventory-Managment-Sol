@@ -12,10 +12,35 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>CenterViewModelResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="ConsumerViewModelResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConsumerViewModelResource.resx</DependentUpon>
+    </Compile>
     <Compile Update="ItemTypeViewModelResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ItemTypeViewModelResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ItemViewModelResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ItemViewModelResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="OrderViewModelResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OrderViewModelResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="SupplierViewModelResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SupplierViewModelResource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="UnitOfMeasureViewModelResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>UnitOfMeasureViewModelResource.resx</DependentUpon>
     </Compile>
     <Compile Update="WarehouseViewModelResource.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -29,12 +54,47 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CenterViewModelResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="ConsumerViewModelResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ConsumerViewModelResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ConsumerViewModelResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="ItemTypeViewModelResource.ar.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ItemTypeViewModelResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ItemTypeViewModelResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ItemViewModelResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ItemViewModelResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ItemViewModelResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="OrderViewModelResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="OrderViewModelResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>OrderViewModelResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SupplierViewModelResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SupplierViewModelResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SupplierViewModelResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UnitOfMeasureViewModelResource.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UnitOfMeasureViewModelResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnitOfMeasureViewModelResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="WarehouseViewModelResource.ar.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

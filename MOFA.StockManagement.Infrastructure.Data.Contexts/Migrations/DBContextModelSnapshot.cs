@@ -22,37 +22,6 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MOFA.StockManagement.Domain.Entities.Center", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("IsMofa")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(32)
-                        .HasColumnType("nvarchar(32)");
-
-                    b.Property<byte[]>("RowVersion")
-                        .IsConcurrencyToken()
-                        .IsRequired()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("rowversion");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Centers", "config");
-                });
-
             modelBuilder.Entity("MOFA.StockManagement.Domain.Entities.Consumer", b =>
                 {
                     b.Property<Guid>("Id")
@@ -109,6 +78,9 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Migrations
                         .HasMaxLength(32)
                         .HasColumnType("nvarchar(32)");
 
+                    b.Property<string>("BarCodeImg")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -147,7 +119,13 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BarCode")
+                        .IsUnique();
+
                     b.HasIndex("ItemTypeId");
+
+                    b.HasIndex("SKU")
+                        .IsUnique();
 
                     b.ToTable("Items", "sales");
                 });
@@ -265,7 +243,7 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Migrations
                     b.Property<byte>("Status")
                         .HasColumnType("tinyint");
 
-                    b.Property<Guid?>("SupplierID")
+                    b.Property<Guid?>("SupplierId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<byte>("Type")
@@ -283,11 +261,11 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Migrations
                     b.HasIndex("Number")
                         .IsUnique();
 
-                    b.HasIndex("SupplierID");
+                    b.HasIndex("SupplierId");
 
                     b.HasIndex("WarehouseId");
 
-                    b.ToTable("Order", "operation");
+                    b.ToTable("Orders", "operation");
                 });
 
             modelBuilder.Entity("MOFA.StockManagement.Domain.Entities.OrderDetail", b =>
@@ -632,6 +610,11 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Migrations
                     b.Property<float>("Capacity")
                         .HasColumnType("real");
 
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(6)
+                        .HasColumnType("nvarchar(6)");
+
                     b.Property<byte>("IsFull")
                         .HasColumnType("tinyint");
 
@@ -658,6 +641,9 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Migrations
                         .HasColumnType("rowversion");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
 
                     b.ToTable("Warehouses", "config");
                 });
@@ -706,7 +692,7 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Migrations
 
                     b.HasOne("MOFA.StockManagement.Domain.Entities.Supplier", "Supplier")
                         .WithMany("Orders")
-                        .HasForeignKey("SupplierID")
+                        .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("MOFA.StockManagement.Domain.Entities.Warehouse", "Warehouse")

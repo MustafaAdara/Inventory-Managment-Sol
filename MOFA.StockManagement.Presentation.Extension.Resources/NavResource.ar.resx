@@ -129,4 +129,10 @@
   <data name="nav_Home" xml:space="preserve">
     <value>الرئيسية</value>
   </data>
+  <data name="nav_Sales" xml:space="preserve">
+    <value>المبيعات</value>
+  </data>
+  <data name="nav_Sales_Items" xml:space="preserve">
+    <value>الاصناف</value>
+  </data>
 </root>

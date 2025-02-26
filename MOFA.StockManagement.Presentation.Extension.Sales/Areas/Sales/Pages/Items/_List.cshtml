@@ -1,0 +1,74 @@
+﻿@page
+@model _ListModel
+@{
+    Layout = "";
+}
+
+@if (Model.Input!.Data.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="th-fit text-center"></th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Input!.Data[0].Name)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Input!.Data[0].BarCode)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Input!.Data[0].SKU)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Input!.Data[0].UnitPrice)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Input!.Data[0].Description)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Input!.Data)
+                {
+                    <tr>
+                        <td class="td-fit text-center">
+                            <a onclick="getModalAction(event,'@Url.Page($"/Items/_Details",new{area="Sales",id= item.Id})')" data-target="#detailsItemModal" title="@GlobalSharedResource.Details" class="btn text-info">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelIssuer => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelIssuer => item.BarCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelIssuer => item.SKU)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelIssuer => item.UnitPrice)
+                        </td>
+                        <td>
+                            @(item.UnitPrice != null ? Html.DisplayFor(modelIssuer => item.UnitPrice) : GlobalSharedResource.Null)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <pagination current-page="@Model.Input.CurrentPage"
+                page-index-element-id="pageIndex"
+                page-name="/Items/_List"
+                route-values='new { area = "Sales", SearchBy = @Model.SearchBy }'
+                total-pages="@Model.Input.TotalPages"
+                show-gap="true"
+                rtl="@Model.Rtl">
+    </pagination>
+}
+else
+{
+    <div class="alert alert-info p-5 text-center" role="alert">
+        @GlobalSharedResource.NoData
+    </div>
+}

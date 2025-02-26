@@ -112,6 +112,10 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Config\Pages\UnitOfMeasures\" />
+  </ItemGroup>
+
 
 
 </Project>

@@ -95,5 +95,23 @@ namespace MOFA.StockManagement.Presentation.Extension.Resources {
                 return ResourceManager.GetString("nav_Home", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sales.
+        /// </summary>
+        public static string nav_Sales {
+            get {
+                return ResourceManager.GetString("nav_Sales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        public static string nav_Sales_Items {
+            get {
+                return ResourceManager.GetString("nav_Sales_Items", resourceCulture);
+            }
+        }
     }
 }

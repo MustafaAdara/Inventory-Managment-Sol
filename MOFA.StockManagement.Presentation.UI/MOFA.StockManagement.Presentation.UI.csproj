@@ -27,6 +27,7 @@
 	    <ProjectReference Include="..\MOFA.StockManagement.ApplicationService.AppService\MOFA.StockManagement.ApplicationService.AppService.csproj" />
     <ProjectReference Include="..\MOFA.StockManagement.ApplicationService.ViewModels\MOFA.StockManagement.ApplicationService.ViewModels.csproj" />
     <ProjectReference Include="..\MOFA.StockManagement.Presentation.Extension.Config\MOFA.StockManagement.Presentation.Extension.Config.csproj" />
+    <ProjectReference Include="..\MOFA.StockManagement.Presentation.Extension.Sales\MOFA.StockManagement.Presentation.Extension.Sales.csproj" />
   </ItemGroup>
 	
   <ItemGroup>

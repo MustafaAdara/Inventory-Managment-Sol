@@ -129,4 +129,10 @@
   <data name="nav_Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="nav_Sales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="nav_Sales_Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
 </root>

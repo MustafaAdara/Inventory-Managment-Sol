@@ -26,9 +26,17 @@ namespace MOFA.StockManagement.Infrastructure.Data.Contexts.Configuration
                 .IsRequired(true);
 
             builder
+                .HasIndex(p => p.BarCode)
+                .IsUnique();
+
+            builder
                 .Property(p => p.SKU)
                 .HasMaxLength(32)
                 .IsRequired(true);
+
+            builder
+                .HasIndex(p => p.SKU)
+                .IsUnique();
 
             builder
                 .Property(p => p.UnitPrice)

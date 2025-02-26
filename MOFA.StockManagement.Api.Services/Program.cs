@@ -87,12 +87,36 @@ namespace MOFA.SuportCente.Api.Services
             // Config Area
                 .AddScoped<ITrackableRepository<ItemType, DbContextBase>, TrackableRepository<ItemType, DbContextBase>>()
                 .AddScoped<ITrackableRepository<Warehouse, DbContextBase>, TrackableRepository<Warehouse, DbContextBase>>()
+                .AddScoped<ITrackableRepository<Item, DbContextBase>, TrackableRepository<Item, DbContextBase>>()
+                .AddScoped<ITrackableRepository<Consumer, DbContextBase>, TrackableRepository<Consumer, DbContextBase>>()
+                .AddScoped<ITrackableRepository<ItemUnitOfMeasure, DbContextBase>, TrackableRepository<ItemUnitOfMeasure, DbContextBase>>()
+                .AddScoped<ITrackableRepository<UnitOfMeasure, DbContextBase>, TrackableRepository<UnitOfMeasure, DbContextBase>>()
+                .AddScoped<ITrackableRepository<Order, DbContextBase>, TrackableRepository<Order, DbContextBase>>()
+                .AddScoped<ITrackableRepository<OrderDetail, DbContextBase>, TrackableRepository<OrderDetail, DbContextBase>>()
+                .AddScoped<ITrackableRepository<OrderSerial, DbContextBase>, TrackableRepository<OrderSerial, DbContextBase>>()
+                .AddScoped<ITrackableRepository<StockBalance, DbContextBase>, TrackableRepository<StockBalance, DbContextBase>>()
+                .AddScoped<ITrackableRepository<Supplier, DbContextBase>, TrackableRepository<Supplier, DbContextBase>>()
+                .AddScoped<ITrackableRepository<SupplierItem, DbContextBase>, TrackableRepository<SupplierItem, DbContextBase>>()
+                .AddScoped<ITrackableRepository<Transaction, DbContextBase>, TrackableRepository<Transaction, DbContextBase>>()
+                .AddScoped<ITrackableRepository<TransactionDetail, DbContextBase>, TrackableRepository<TransactionDetail, DbContextBase>>()
                 ;
 
             builder.Services
                 //Config Area
                 .AddScoped<IItemTypeService, ItemTypeService>()
                 .AddScoped<IWarehouseService, WarehouseService>()
+                .AddScoped<IItemService, ItemService>()
+                .AddScoped<IItemUnitOfMeasureService, ItemUnitOfMeasureService>()
+                .AddScoped<IUnitOfMeasureService, UnitOfMeasureService>()
+                .AddScoped<IOrderService, OrderService>()
+                .AddScoped<IOrderDetailService, OrderDetailService>()
+                .AddScoped<IOrderSerialService, OrderSerialService>()
+                .AddScoped<IStockBalanceService, StockBalanceService>()
+                .AddScoped<ISupplierService, SupplierService>()
+                .AddScoped<ISupplierItemService, SupplierItemService>()
+                .AddScoped<ITransactionService, TransactionService>()
+                .AddScoped<ITransactionDetailService, TransactionDetailService>()
+
                 ;
 
 

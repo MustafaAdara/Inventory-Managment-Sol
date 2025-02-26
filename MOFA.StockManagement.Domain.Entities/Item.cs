@@ -5,6 +5,7 @@
         public string Name { get; set; } = default!;
         public string Description { get; set; } = default!;
         public string BarCode { get; set; } = default!;
+        public string? BarCodeImg { get; set; } = default!;
         public string SKU { get; set; } = default!;
         public decimal? UnitPrice { get; set; }
         public Guid ItemTypeId { get; set; }
