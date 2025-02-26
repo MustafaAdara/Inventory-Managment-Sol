@@ -74,8 +74,9 @@ MofaStockManagementSol/
 
 - **Domain**: Contains core entities and domain logic.
 - **Infrastructure**: Includes **Entity Framework Core DbContext**, configurations, migrations, repositories, and services.
-- **Application**: Handles business logic, use cases, and DTOs.
-- **Presentation**: Provides API controllers, MVC views, and Razor Pages for UI interaction.
+- **API**: include service Api and indentity api.
+- **Application**: Handles HttpClient and ViewModels.
+- **Presentation**: Provides API controllers, and Razor Pages for UI interaction.
 
 ---
 
@@ -84,7 +85,7 @@ MofaStockManagementSol/
 - **.NET 8 (C#)**
 - **Entity Framework Core**
 - **SQL Server**
-- **Razor Pages & MVC**
+- **Razor Pages**
 - **Bootstrap / JavaScript / Ajax** *(for Responsive UI)*
 
 ---
